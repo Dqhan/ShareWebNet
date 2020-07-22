@@ -50,7 +50,7 @@
     "http-proxy-middleware": "^0.20.0",
     "image-webpack-loader": "^5.0.0",
     "inspect": "0.0.2",
-    "jquery": "3.2.1",
+    "jquery": "3.5.1",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.11.0",
     "koa-bodyparser": "^4.2.1",
