@@ -65,7 +65,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name]-[contenthash].css'
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
     ],
     resolve: {
         extensions: [".js", ".jsx", ".json", ".css", ".less"]
