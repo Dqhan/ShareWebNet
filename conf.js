@@ -21,9 +21,27 @@ const baseUrl = "http://localhost:3001/";
 export default [
     {
         name: 'common',
-        // storeUrl: './app-common/dist/store.js',
-        // moduleUrl: 'http://localhost:3002/index.html',
         moduleUrl: baseUrl + 'common',
+        path: '/'
+    },
+    {
+        name: 'blog',
+        moduleUrl: baseUrl + 'blog',
+        path: '/'
+    },
+    {
+        name: 'collaborator',
+        moduleUrl: baseUrl + 'collaborator',
+        path: '/'
+    },
+    {
+        name: 'login',
+        moduleUrl: baseUrl + 'login',
+        path: '/'
+    },
+    {
+        name: 'vedio',
+        moduleUrl: baseUrl + 'vedio',
         path: '/'
     }
 ]
