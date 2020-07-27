@@ -21,27 +21,27 @@ const baseUrl = "http://localhost:3001/";
 export default [
     {
         name: 'common',
-        moduleUrl: baseUrl + 'common',
+        moduleUrl: baseUrl + 'common_module',
         path: '/'
     },
     {
         name: 'blog',
-        moduleUrl: baseUrl + 'blog',
-        path: '/'
+        moduleUrl: baseUrl + 'blog_module',
+        path: '/blog'
     },
     {
         name: 'collaborator',
-        moduleUrl: baseUrl + 'collaborator',
-        path: '/'
+        moduleUrl: baseUrl + 'collaborator_module',
+        path: '/collborator'
     },
     {
         name: 'login',
-        moduleUrl: baseUrl + 'login',
-        path: '/'
+        moduleUrl: baseUrl + 'login_module',
+        path: '/login'
     },
     {
         name: 'vedio',
-        moduleUrl: baseUrl + 'vedio',
-        path: '/'
+        moduleUrl: baseUrl + 'vedio_module',
+        path: '/vedio'
     }
 ]

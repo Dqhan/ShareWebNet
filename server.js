@@ -9,23 +9,120 @@ const app = express();
 
 app.use(express.static(__dirname))
 
-app.get('*', function (request, response) {
-    response.sendFile(path.resolve(__dirname, 'index.html'))
-})
+// app.get('*', function (request, response) {
+//     response.sendFile(path.resolve(__dirname, 'index.html'))
+// })
+
+var currentModule = '';
+
+const getTargetServer = function (req) {
+    var conf;
+    switch (req.path) {
+        case '/common_module':
+            currentModule = 'common_module';
+            conf = {
+                protocol: 'http',
+                host: 'localhost',
+                port: 3002
+            };
+            break;
+        case '/blog_module':
+            currentModule = 'blog_module';
+            conf = {
+                protocol: 'http',
+                host: 'localhost',
+                port: 3003
+            };
+            break;
+        case '/collaborator_module':
+            currentModule = 'collaborator_module';
+            conf = {
+                protocol: 'http',
+                host: 'localhost',
+                port: 3004
+            };
+            break;
+        case '/login_module':
+            currentModule = 'login_module';
+            conf = {
+                protocol: 'http',
+                host: 'localhost',
+                port: 3005
+            };
+            break;
+        case '/vedio_module':
+            currentModule = 'vedio_module';
+            conf = {
+                protocol: 'http',
+                host: 'localhost',
+                port: 3006
+            };
+            break;
+        default:
+            switch (currentModule) {
+                case 'common_module':
+                    conf = {
+                        protocol: 'http',
+                        host: 'localhost',
+                        port: 3002
+                    };
+                    break;
+                case 'blog_module':
+                    conf = {
+                        protocol: 'http',
+                        host: 'localhost',
+                        port: 3003
+                    };
+                    break;
+                case 'collaborator_module':
+                    conf = {
+                        protocol: 'http',
+                        host: 'localhost',
+                        port: 3004
+                    };
+                    break;
+                case 'login_module':
+                    conf = {
+                        protocol: 'http',
+                        host: 'localhost',
+                        port: 3005
+                    };
+                    break;
+                case 'vedio_module':
+                    conf = {
+                        protocol: 'http',
+                        host: 'localhost',
+                        port: 3006
+                    };
+                    break;
+            }
+            break;
+    }
+    return conf;
+}
 
 const options = {
     target: 'http://localhost:3002',
     changeOrigin: true,
     pathRewrite: {
-        '/common': '/', // remove base path
+        '/common_module': '/',
+        '/blog_module': '/',
+        '/collaborator_module': '/',
+        '/login_module': '/',
+        '/vedio_module': '/',
     },
-    // router: {
-    //     'dev.localhost:3000': 'http://localhost:8000',
-    // },
+    router: function (req) {
+        return getTargetServer(req);
+    }
 }
 const filter = function (pathname, req) {
+
     var result;
-    result = (pathname.match('/common') ||
+    result = (pathname.match('/common_module') ||
+        pathname.match('/blog_module') ||
+        pathname.match('/collaborator_module') ||
+        pathname.match('/login_module') ||
+        pathname.match('/vedio_module') ||
         pathname.match('/*.css') ||
         pathname.match('/*.js')) && req.method === 'GET';
     return result;

@@ -36,7 +36,6 @@ async function loadApp(htmlPath) {
 
     const global = window;
 
-
     const appContent = template;
 
     let element = createElement(appContent);

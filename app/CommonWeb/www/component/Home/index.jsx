@@ -10,26 +10,49 @@ function Home(props) {
 
     var handleLink = function handleLink(type) {
         switch (type) {
-            case "app1":
-                history.pushState(null, null, "/react-1");
+            case "blog":
+                history.pushState(null, null, "/blog");
                 break;
-            case "app2":
-                history.pushState(null, null, "/react-2");
+            case "collaborator":
+                history.pushState(null, null, "/collaborator");
+                break;
+            case "login":
+                history.pushState(null, null, "/login");
+                break;
+            case "vedio":
+                history.pushState(null, null, "/vedio");
+                break;
+            case "common":
+                history.pushState(null, null, "/");
                 break;
         }
     };
 
     return <div>
-        <h1>common app1</h1>
         <ul>
             <li>
-                <a onClick={() => handleLink("app1")}>
-                    react app1
+                <a onClick={() => handleLink("blog")}>
+                    Blog
             </a>
             </li>
             <li>
-                <a onClick={() => handleLink("app2")}>
-                    react app2
+                <a onClick={() => handleLink("collaborator")}>
+                    Collaborator
+            </a>
+            </li>
+            <li>
+                <a onClick={() => handleLink("login")}>
+                    Login
+            </a>
+            </li>
+            <li>
+                <a onClick={() => handleLink("vedio")}>
+                    Vedio
+            </a>
+            </li>
+            <li>
+                <a onClick={() => handleLink("common")}>
+                    首页
             </a>
             </li>
         </ul>
