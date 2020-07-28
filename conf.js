@@ -32,7 +32,7 @@ export default [
     {
         name: 'collaborator',
         moduleUrl: baseUrl + 'collaborator_module',
-        path: '/collborator'
+        path: '/collaborator'
     },
     {
         name: 'login',

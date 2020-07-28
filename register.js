@@ -8,8 +8,13 @@ import { importEntry } from 'import-html-entry';
 
 var globalInstance = new GlobalInstance();
 
+var registeredModule = [];
 
 async function register(name, storeUrl, moduleUrl, path) {
+    if (registeredModule.includes(name)) return;
+    
+    registeredModule.push(name);
+
     let storeModule = {},
         customProps = { globalInstance: globalInstance };
     // storeModule = await SystemJS.import(storeUrl);

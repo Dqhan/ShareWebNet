@@ -11,7 +11,7 @@ module.exports = {
         path: path.resolve(__dirname, "./dist/"),
         filename: '[name]-[chunkhash].js',
         libraryTarget: "umd",
-        library: "common",
+        library: "collaborator",
     },
     devtool: "source-map",
     module: {

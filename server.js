@@ -9,8 +9,39 @@ const app = express();
 
 app.use(express.static(__dirname))
 
+
 // app.get('*', function (request, response) {
 //     response.sendFile(path.resolve(__dirname, 'index.html'))
+// })
+
+app.get('/blog', function (request, response) {
+    response.sendFile(path.resolve(__dirname, 'index.html'))
+})
+
+app.get('/collaborator', function (request, response) {
+    response.sendFile(path.resolve(__dirname, 'index.html'))
+})
+
+app.get('/login', function (request, response) {
+    response.sendFile(path.resolve(__dirname, 'index.html'))
+})
+
+app.get('/vedio', function (request, response) {
+    response.sendFile(path.resolve(__dirname, 'index.html'))
+})
+
+
+// app.get('*', function (request, response) {
+//     if (request.url != '/common_module' &&
+//         request.url != '/blog_module' &&
+//         request.url != '/collaborator_module' &&
+//         request.url != '/login_module' &&
+//         request.url != '/vedio_module')
+//         response.sendFile(path.resolve(__dirname, 'index.html'))
+//     else {
+//         response.status = 200;
+//         response.send();
+//     }
 // })
 
 var currentModule = '';

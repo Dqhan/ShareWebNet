@@ -1,6 +1,6 @@
 function Home() {
     return <div>
-        Collaborator
+        collaborator
     </div>
 }
 
