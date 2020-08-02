@@ -4,11 +4,13 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "dev:*": "",
-    "dev:common": "webpack --config ./CommonWeb/webpack.dev.js",
-    "dev:blog": "webpack --config ./Blog/webpack.dev.js",
-    "dev:login": "webpack --config ./LoginWeb/webpack.dev.js",
-    "dev:vedio": "webpack --config ./VedioWeb/webpack.dev.js"
+    "dev:*": "npm run dev:common && npm run dev:blog",
+    "dev:common": "webpack --config ./app/CommonWeb/www/webpack.dev.js",
+    "dev:blog": "webpack --config ./app/BlogWeb/www/webpack.dev.js",
+    "dev:login": "webpack --config ./app/LoginWeb/www/webpack.dev.js",
+    "dev:vedio": "webpack --config ./app/VedioWeb/www/webpack.dev.js",
+    "dev:collaborator": "webpack --config ./app/CollaboratorWeb/www/webpack.dev.js",
+    "install:common": "cd app/CommonWeb/www && npm install"
   },
   "author": "dqhan",
   "license": "ISC",
